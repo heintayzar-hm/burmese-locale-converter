@@ -1,4 +1,4 @@
-### Burmese Locale Translator
+### Burmese Locale Converter
 A simple TypeScript utility for translating numbers, months, and days into the Burmese language.
 
 ### Installation
@@ -16,7 +16,7 @@ import {
   translateMonth,
   translateDay,
   translateDate,
-} from 'burmese-locale-translator';
+} from 'burmese-locale-converter';
 
 const numberText = translateNumbers(123, 'text');
 const monthText = translateMonth('January');

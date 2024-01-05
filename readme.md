@@ -4,7 +4,7 @@ A simple TypeScript utility for translating numbers, months, and days into the B
 ### Installation
 
 ```
-     npm install burmese-locale-translator
+     npm install burmese-locale-converter
 ```
 
 ### Usage
@@ -38,15 +38,18 @@ translateMonth
 
 ```
 translateMonth(month: string | number): string;
-Translates English month names into Burmese.
 ```
+Translates English month names into Burmese.
+
 
 translateDay
 
 ```
 translateDay(day: string | number): string;
-Translates English day abbreviations into Burmese.
 ```
+Translates English day abbreviations into Burmese.
+
+
 translateDate
 ```
 translateDate(date: Date): Date;

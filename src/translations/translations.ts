@@ -68,13 +68,12 @@ export const dayTranslations : Record<string, string> = {
 }
 
 export const dayTranslationsInNumber: Record<number, string> = {
+  0: 'တနင်္ဂနွေ',
   1: 'တနင်္လာ',
   2: 'အင်္ဂါ',
   3: 'ဗုဒ္ဓဟူး',
   4: 'ကြာသပတေး',
   5: 'သောကြာ',
   6: 'စနေ',
-  7: 'တနင်္ဂနွေ'
-
 }
 

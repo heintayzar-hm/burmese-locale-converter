@@ -64,8 +64,8 @@ const translateDay = (day: string | number): string => {
 
 
 const translateDate = (date: Date, {
-    includeDate = true,
-    includeDay = false,
+    includeDayNumber = false,
+    includeDay = true,
     includeMonth = true,
     includeYear = true,
     includeYearInText = false,
@@ -73,7 +73,7 @@ const translateDate = (date: Date, {
     includeMinutes = false,
     includeSeconds = false,
 }: {
-    includeDate?: boolean,
+    includeDayNumber?: boolean,
     includeDay?: boolean,
     includeMonth?: boolean,
     includeYear?: boolean,
@@ -84,10 +84,10 @@ const translateDate = (date: Date, {
     } = {}
 ): string => {
     let result = '';
-    if (includeDate) { // number 1 -> ၁
-        result += translateDay(date.getDate()) + ' ';
+    if (includeDay) { // number 1 -> ၁
+        result += translateDay(date.getDay()) + ' ';
     }
-    if (includeDay) { // text 1 ->
+    if (includeDayNumber) { // text 1 ->
         result += translateNumbers(date.getDay(), 'number') + ' ';
     }
     if (includeMonth) {

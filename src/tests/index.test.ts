@@ -36,6 +36,11 @@ import {
 describe('translateDate', () => {
     it('should translate date', () => {
         const date = new Date('2020-01-01');
-        expect(translateDate(date)).toEqual('တနင်္လာ ဇန်နဝါရီ ၂၀၂၀');
+        expect(translateDate(date)).toEqual('ဗုဒ္ဓဟူး ဇန်နဝါရီ ၂၀၂၀');
     });
+
+  it('should translate date for monday greater than 7', () => {
+    const date = new Date('2024-01-08');
+    expect(translateDate(date)).toEqual('တနင်္လာ ဇန်နဝါရီ ၂၀၂၄');
+  });
 });

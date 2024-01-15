@@ -11,19 +11,14 @@ A simple TypeScript utility for translating numbers, months, and days into the B
 
 
 ```
-import {
-  translateNumbers,
-  translateMonth,
-  translateDay,
-  translateDate,
-} from 'burmese-locale-converter';
 
-const numberText = translateNumbers(123, 'text');
-const monthText = translateMonth('January');
-const dayText = translateDay('Mon');
+const numberText = translateNumbers(123, 'text'); // တစ်ရာ နှစ်ဆယ် သုံး
+const number = translateNumbers(123, 'number') // ၁၂၃
+const monthText = translateMonth('January'); // ဇန်နဝါရီ
+const dayText = translateDay('Mon'); // တနင်္လာ
 
 const originalDate = new Date(); // Current date and time
-const translatedDate = translateDate(originalDate);
+const translatedDate = translateDate(originalDate); // တနင်္လာ ဇန်နဝါရီ ၂၀၂၄
 ```
 
  TranslateNumbers
@@ -62,6 +57,10 @@ This project uses Jest for testing. Run the following command to execute the tes
 ```
 npm test
 ```
+
+### Contribution
+
+Contribution are welcome. You can suggest new features and find bugs and make issues.
 
 
 ### License

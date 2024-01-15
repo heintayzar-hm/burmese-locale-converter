@@ -7,8 +7,8 @@ const translateNumbers = (number: string | number, format = "text" as "text" | "
         let numberString = number.toString();
         let result = "";
         for (let i = 0; i < numberString.length; i++) {
-            if (numberString[i] === ".") {
-                result += ".";
+            if (isNaN(parseInt(numberString[i]))) {
+                result += numberString[i];
                 continue;
             }
             result += numberTranslationsInNumber[parseInt(numberString[i])];

@@ -16,6 +16,10 @@ import {
       expect(translateNumbers(123, 'number')).toEqual('၁၂၃');
     });
 
+    it('should translate numbers to number format in number', () => {
+      expect(translateNumbers("123, 456", 'number')).toEqual('၁၂၃, ၄၅၆');
+    });
+
     // Add more test cases for different scenarios
   });
 

@@ -12,6 +12,18 @@ import {
       expect(translateNumbers(123, 'text')).toEqual('တစ်ရာ နှစ်ဆယ် သုံး');
     });
 
+    it('should translate numbers to text format for large numbers', () => {
+      expect(translateNumbers(3456423, 'text')).toEqual('သုံးသန်း လေးသိန်း ငါးသောင်း ခြောက်ထောင် လေးရာ နှစ်ဆယ် သုံး');
+    });
+
+    it('should translate numbers to text format for large numbers', () => {
+      expect(translateNumbers(3456023, 'text')).toEqual('သုံးသန်း လေးသိန်း ငါးသောင်း ခြောက်ထောင် နှစ်ဆယ် သုံး');
+    });
+
+    it('should translate numbers to text format for large numbers', () => {
+      expect(translateNumbers(123456423, 'text')).toEqual('တစ်ရာ နှစ်ဆယ် သုံးသန်း လေးသိန်း ငါးသောင်း ခြောက်ထောင် လေးရာ နှစ်ဆယ် သုံး');
+    });
+
     it('should translate numbers to number format', () => {
       expect(translateNumbers(123, 'number')).toEqual('၁၂၃');
     });

@@ -29,8 +29,17 @@ const translateNumbers = (number: string | number, format = "text" as "text" | "
         const units = number % 10;
         const tens = Math.floor((number % 100) / 10);
         const hundreds = Math.floor((number % 1000) / 100);
-        const thousands = Math.floor(number / 1000);
+        const thousands = Math.floor((number % 10000) / 1000);
+        const tenThousands = Math.floor((number % 100000) / 10000);
+        const hundredThousands = Math.floor((number % 1000000) / 100000);
+        const millions = Math.floor(number / 1000000);
 
+        // for any number greater than 10 million, we will use millions as the unit
+        // use recursion to translate the millions part
+
+        const millionsText = millions > 0 ? `${translateNumbers(millions, 'text')}သန်း ` : '';
+        const hundredThousandsText = hundredThousands > 0 ? `${numberTranslationsInText[hundredThousands]}သိန်း ` : '';
+        const tenThousandsText = tenThousands > 0 ? `${numberTranslationsInText[tenThousands]}သောင်း ` : '';
         const thousandsText = thousands > 0 ? `${numberTranslationsInText[thousands]}ထောင် ` : '';
         const hundredsText = hundreds > 0 ? `${numberTranslationsInText[hundreds]}ရာ ` : '';
         const tensText = tens > 0 ? `${numberTranslationsInText[tens]}ဆယ် ` : '';
@@ -39,7 +48,7 @@ const translateNumbers = (number: string | number, format = "text" as "text" | "
 
         const negativeSign = isNegative ? '-' : '';
 
-        return `${negativeSign}${thousandsText}${hundredsText}${tensText}${unitsText}`;
+        return `${negativeSign}${millionsText}${hundredThousandsText}${tenThousandsText}${thousandsText}${hundredsText}${tensText}${unitsText}`.trim();
 
     }
 
